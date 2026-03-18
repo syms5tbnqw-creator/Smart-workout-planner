@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartFit Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🏋️ SmartFit Planner</h1>
+    <form id="planner-form">
+        <input type="number" id="height" placeholder="Height (cm)" required>
+        <input type="number" id="weight" placeholder="Weight (kg)" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <select id="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <button type="submit">Get My Plan</button>
+    </form>
+    <div id="result"></div>
+    <script src="app.js"></script>
+</body>
+</html>
