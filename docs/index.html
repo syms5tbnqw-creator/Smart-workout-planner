@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SmartFit Planner</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit Planner - AI Workout Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🏋️ SmartFit Planner</h1>
-    <form id="planner-form">
-        <input type="number" id="height" placeholder="Height (cm)" required>
-        <input type="number" id="weight" placeholder="Weight (kg)" required>
-        <input type="number" id="age" placeholder="Age" required>
-        <select id="sex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-        <button type="submit">Get My Plan</button>
-    </form>
-    <div id="result"></div>
+    <div class="container">
+        <header>
+            <h1>🏋️ SmartFit Planner</h1>
+            <p>Personalized workout plans based on your biology</p>
+        </header>
+        
+        <form id="planner-form">
+            <div class="form-section">
+                <h3>📏 Biometrics</h3>
+                <input type="number" id="height" placeholder="Height (cm)" min="100" max="250" required>
+                <input type="number" id="weight" placeholder="Weight (kg)" min="30" max="200" required>
+                <input type="number" id="age" placeholder="Age" min="16" max="90" required>
+                
+                <select id="sex" required>
+                    <option value="">Select Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                
+                <select id="ethnicity" required>
+                    <option value="">Select Ethnicity</option>
+                    <option value="south_asian">South Asian</option>
+                    <option value="east_asian">East Asian</option>
+                    <option value="african">African</option>
+                    <option value="caucasian">Caucasian</option>
+                    <option value="hispanic">Hispanic</option>
+                    <option value="other">Other/Mixed</option>
+                </select>
+            </div>
+            
+            <div class="form-section">
+                <h3>📅 Training Schedule</h3>
+                <select id="days" required>
+                    <option value="3">3 days/week</option>
+                    <option value="4">4 days/week</option>
+                    <option value="5">5 days/week</option>
+                    <option value="6">6 days/week</option>
+                </select>
+            </div>
+            
+            <div class="form-section">
+                <h3>🏠 Available Equipment</h3>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" name="equipment" value="bodyweight" checked> Bodyweight Only</label>
+                    <label><input type="checkbox" name="equipment" value="dumbbells"> Dumbbells</label>
+                    <label><input type="checkbox" name="equipment" value="barbell"> Barbell</label>
+                    <label><input type="checkbox" name="equipment" value="resistance_bands"> Resistance Bands</label>
+                    <label><input type="checkbox" name="equipment" value="pullup_bar"> Pull-up Bar</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="generate-btn">Generate My Plan</button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+    
     <script src="app.js"></script>
 </body>
 </html>
